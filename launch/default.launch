@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Set the parameter for the topic name       -->
+    <arg name = "topic_name" default = "ranging/0" />
+    <!-- Set the parameter for the serial port      -->
+    <arg name = "port"       default = "/dev/ttyAMA0" />
+    <!-- Set the parameter for the baudrate         -->
+    <arg name = "baudrate" default = "921600" />
+    <!-- Set the parameter for the pub frequency    -->
+    <arg name = "rate_Hz" default = "1" />
+    <!-- Set the host_name of the device    -->
+    <arg name = "host_name" default="" />
+
+    <group ns="$(arg host_name)"> 
+        <!-- UWB Node -->
+        <node
+            pkg     ="twr_uwb_driver"
+            type    ="SerialReader.py"
+            name    ="uwb"
+            output  ="screen" >
+            <param  name="topic_name"  value="$(arg topic_name)"   />
+            <param  name="port"        value="$(arg port)"         />
+            <param  name="baudrate"    value="$(arg baudrate)"     />
+            <param  name="rate_Hz"     value="$(arg rate_Hz)"    />
+            
+        </node>
+    </group>
+</launch>
