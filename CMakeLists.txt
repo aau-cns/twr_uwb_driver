@@ -53,7 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
 ###################################
 
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS
   LIBRARIES twr_uwb_driver
   CATKIN_DEPENDS roscpp rospy std_msgs uwb_msgs
   DEPENDS
@@ -66,7 +66,6 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
   ${catkin_INCLUDE_DIRS}
 )
 
