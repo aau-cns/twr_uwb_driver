@@ -8,4 +8,5 @@ This information is stored and published as a [uwb_msgs::TwoWayRangeStamped](htt
 ## Dependcies
 
 - [uwb_msgs](https://gitlab.aau.at/aau-cns/ros_pkgs/uwb_msgs)
+- [pyserial](https://pypi.org/project/pyserial/) `pip install pyserial`
 
